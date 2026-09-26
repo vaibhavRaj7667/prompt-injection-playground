@@ -91,6 +91,7 @@ output_guard = OutputGuard()
 dashboard = SecurityDashboard(log_file="attack_log.json")
 
 def secure_chat(user_input: str, history: list) -> tuple[str, str, list]:
+    
     guard_result = input_guard.validate(user_input)
 
     if not guard_result.safe:
